@@ -56,3 +56,17 @@ html[lang="en"] h1{font-size:77px;letter-spacing:-3px;line-height:1.1;margin-top
 @media(min-width:741px) and (max-width:900px){.playground-layout{grid-template-columns:1fr}.playground-preview{max-width:330px}}
 @media(max-width:600px){.work-title{font-size:25px}.work-description{font-size:13px}.work-entry+.work-entry{margin-top:27px;padding-top:24px}.publication-note summary{gap:12px;font-size:9px}.publication-venue{font-size:9px}.publication-toggle{font-size:9px}.playground-layout{grid-template-columns:1fr;gap:18px}.playground-preview{max-width:400px}.playground-copy .work-title{font-size:25px}.playground-copy .work-description{font-size:13px}.work-links{margin-top:17px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.playground-preview img{transition:none}.playground-preview:hover img{transform:none}}
+
+/* An interactive generative sculpture, independent of the research results. */
+.search-art{position:relative;isolation:isolate;height:292px;margin-top:25px;overflow:hidden;background:radial-gradient(ellipse at 50% 54%,#e5e9dd77,transparent 65%),#f0f0e8;border:1px solid #e2e3d9}
+.search-art::after{content:"";position:absolute;inset:12px;z-index:-1;border:1px solid #dee1d155;pointer-events:none}
+.search-art canvas,.art-fallback{display:block;position:absolute;inset:5px 0 25px;width:100%;height:calc(100% - 30px)}
+.search-art canvas{opacity:0;touch-action:pan-y}.search-art.is-ready canvas{opacity:1}.search-art.is-ready .art-fallback{display:none}
+.art-toolbar{position:absolute;left:21px;right:16px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:15px;pointer-events:none}
+.art-index{font:9px var(--mono);letter-spacing:1.3px;color:#7b8370}.art-controls{display:flex;align-items:center;gap:17px;pointer-events:auto}
+.art-controls button{display:flex;align-items:center;gap:11px;padding:5px 0;color:#66715c;font-size:10px;line-height:1.5}.art-controls button:hover{color:var(--accent)}.art-controls button[hidden]{display:none}
+#art-pause{width:24px;height:24px;justify-content:center}#art-pause svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.2}
+.art-play-icon{display:none}#art-pause[aria-pressed="true"] .art-pause-icon{display:none}#art-pause[aria-pressed="true"] .art-play-icon{display:block}
+.search-art+.publication-note{margin-top:0;border-top:0}
+@media(max-width:600px){.search-art{height:240px;margin-top:23px}.art-toolbar{left:16px;right:12px;bottom:10px}.art-index{font-size:8px}.art-controls{gap:13px}}
+@media print{.search-art{display:none}}

@@ -12,9 +12,9 @@
   <meta property="og:type" content="website">
   <title>张智鹏 · Zhipeng Zhang</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20261017-work">
-  <script src="content.js?v=20261017-work" defer></script>
-  <script src="app.js?v=20261017-work" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261017-sculpture">
+  <script src="content.js?v=20261017-sculpture" defer></script>
+  <script src="app.js?v=20261017-sculpture" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="skip">跳到正文</a>
@@ -78,6 +78,11 @@
           <h3 class="work-title" data-i18n="projectTitle">NeuroEA 参数学习</h3>
           <p class="work-description" data-i18n="projectSummary">用强化学习为进化算法配置参数。</p>
           <p class="work-meta" data-i18n="projectDetail">国家级大创 · 2025 年立项 · 项目负责人</p>
+          <figure class="search-art" id="search-art" aria-label="可以互动的点阵雕塑" data-i18n-aria="artLabel">
+            <svg class="art-fallback" viewBox="0 0 800 260" aria-hidden="true"><g fill="none" stroke="#89947d" stroke-width=".7"><ellipse cx="400" cy="130" rx="205" ry="75" transform="rotate(-16 400 130)"/><ellipse cx="400" cy="130" rx="205" ry="75" transform="rotate(16 400 130)"/><ellipse cx="400" cy="130" rx="205" ry="75" transform="rotate(48 400 130)"/><ellipse cx="400" cy="130" rx="205" ry="75" transform="rotate(-48 400 130)"/></g><circle cx="596" cy="115" r="4" fill="#973e32"/></svg>
+            <canvas id="search-art-canvas" aria-hidden="true"></canvas>
+            <figcaption class="art-toolbar"><span class="art-index" aria-hidden="true">01 / 03</span><div class="art-controls"><button type="button" id="art-shape" hidden><span data-i18n="artChange">换个形状</span><span aria-hidden="true">↗</span></button><button type="button" id="art-pause" aria-label="暂停动画" data-i18n-aria="artPause" aria-pressed="false" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path class="art-pause-icon" d="M5 4v8M11 4v8"/><path class="art-play-icon" d="m5 3 7 5-7 5z"/></svg></button></div></figcaption>
+          </figure>
           <details id="paper-eic" class="publication-note">
             <summary><span class="publication-venue">EIC 2026</span><span class="publication-status" data-i18n="paperStatus">第一作者 · 已录用</span><span class="publication-toggle" data-i18n="paperDetails">论文信息</span><span class="publication-plus" aria-hidden="true">+</span></summary>
             <div class="publication-body">

@@ -29,6 +29,7 @@ window.HOMEPAGE_EN = {
   projectTitle: 'NeuroEA parameter learning',
   projectSummary: 'Using reinforcement learning to configure evolutionary algorithms.',
   projectDetail: 'National undergraduate research project · Since 2025 · Project lead',
+  artLabel: 'An interactive particle sculpture', artChange: 'Change shape', artPause: 'Pause animation',
   paperStatus: 'First author · Accepted', paperDetails: 'Paper details',
   paperSummary: 'Combining static priors with constrained policy residuals to study dynamic configuration of evolutionary algorithms.',
   paperRole: 'I led method design, built the experimental system, analyzed the results, and wrote the manuscript.',
