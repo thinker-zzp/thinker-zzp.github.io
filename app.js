@@ -8,6 +8,7 @@
   const readOriginal = el => [...el.childNodes].map(node => node.nodeName === 'BR' ? '\n' : node.textContent).join('');
   textElements.forEach(el => chineseText.set(el, readOriginal(el)));
   ariaElements.forEach(el => chineseAria.set(el, el.getAttribute('aria-label')));
+  const imageAlts = new Map([...document.querySelectorAll('[data-i18n-alt]')].map(el => [el, el.alt]));
   const initialTitle = document.title;
   const metaDescription = document.querySelector('meta[name="description"]');
   const initialDescription = metaDescription?.content || '';
@@ -37,6 +38,7 @@
       el.textContent = language === 'en' ? (english[key] ?? chineseText.get(el)) : chineseText.get(el);
     });
     ariaElements.forEach(el => el.setAttribute('aria-label', language === 'en' ? (english[el.dataset.i18nAria] ?? chineseAria.get(el)) : chineseAria.get(el)));
+    imageAlts.forEach((original, el) => { el.alt = language === 'en' ? (english[el.dataset.i18nAlt] ?? original) : original; });
     document.title = language === 'en' ? (cvPage ? english.cvPageTitle : english.pageTitle) : initialTitle;
     if (metaDescription) metaDescription.content = language === 'en' ? english.description : initialDescription;
     const ogTitle = document.querySelector('meta[property="og:title"]');
