@@ -12,9 +12,9 @@
   <meta property="og:type" content="website">
   <title>张智鹏 · Zhipeng Zhang</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20261017-sculpture">
-  <script src="content.js?v=20261017-sculpture" defer></script>
-  <script src="app.js?v=20261017-sculpture" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261017-nlp">
+  <script src="content.js?v=20261017-nlp" defer></script>
+  <script src="app.js?v=20261017-nlp" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="skip">跳到正文</a>
@@ -64,8 +64,8 @@
       <div class="chapter-content about-content">
         <p class="lead" data-i18n="aboutLead">我在安徽大学学习计算机科学与技术，是 2024 级本科生。</p>
         <p data-i18n="aboutBody">我的研究围绕一个问题展开：如何让算法在求解过程中，学会调整自己的搜索方式？目前，我将强化学习用于进化算法的动态配置，探索静态先验、残差控制与策略学习的结合。</p>
-        <p data-i18n="aboutWork">在研究中，我参与方法设计、实验系统搭建、对照与消融实验，以及结果分析和论文写作。这里会持续整理我的研究、项目和学习过程。</p>
-        <div class="interest-row"><span class="small-label" data-i18n="interestsLabel">研究兴趣</span><div class="interest-list"><span data-i18n="interestRL">强化学习</span><span data-i18n="interestEC">进化计算</span><span data-i18n="interestAC">算法动态配置</span></div></div>
+        <p data-i18n="aboutWork">在研究中，我参与方法设计、实验系统搭建、对照与消融实验，以及结果分析和论文写作。我也对自然语言处理感兴趣，正在做一些可以动手玩的小实验。</p>
+        <div class="interest-row"><span class="small-label" data-i18n="interestsLabel">研究兴趣</span><div class="interest-list"><span data-i18n="interestRL">强化学习</span><span data-i18n="interestEC">进化计算</span><span data-i18n="interestAC">算法动态配置</span><span data-i18n="interestNLP">自然语言处理</span></div></div>
         <div class="about-links"><a href="mailto:zhangzhipeng520ai@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://github.com/thinker-zzp" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="mailto:zhangzhipeng520ai@gmail.com?subject=CV%20request" target="_blank" rel="noopener"><span data-i18n="cvLabel">索取简历</span> <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
@@ -83,8 +83,8 @@
             <canvas id="search-art-canvas" aria-hidden="true"></canvas>
             <figcaption class="art-toolbar"><span class="art-index" aria-hidden="true">01 / 03</span><div class="art-controls"><button type="button" id="art-shape" hidden><span data-i18n="artChange">换个形状</span><span aria-hidden="true">↗</span></button><button type="button" id="art-pause" aria-label="暂停动画" data-i18n-aria="artPause" aria-pressed="false" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path class="art-pause-icon" d="M5 4v8M11 4v8"/><path class="art-play-icon" d="m5 3 7 5-7 5z"/></svg></button></div></figcaption>
           </figure>
-          <details id="paper-eic" class="publication-note">
-            <summary><span class="publication-venue">EIC 2026</span><span class="publication-status" data-i18n="paperStatus">第一作者 · 已录用</span><span class="publication-toggle" data-i18n="paperDetails">论文信息</span><span class="publication-plus" aria-hidden="true">+</span></summary>
+          <article id="paper-eic" class="publication-note">
+            <div class="publication-heading"><span class="publication-venue">EIC 2026</span><span class="publication-status" data-i18n="paperStatus">第一作者 · 已录用</span></div>
             <div class="publication-body">
               <h4>Static-Prior-Based Dynamic Configuration with Constrained Continuous Residuals for Trainable Evolutionary Algorithms</h4>
               <p class="publication-authors"><strong>Zhipeng Zhang</strong>, Wenbiao Li, Shangshang Yang</p>
@@ -92,7 +92,7 @@
               <p data-i18n="paperRole">我负责方法设计、实验系统搭建、实验分析及论文写作。</p>
               <button class="citation-link" type="button" id="citation-open"><span data-i18n="citationButton">引用信息</span><span aria-hidden="true">↗</span></button>
             </div>
-          </details>
+          </article>
         </article>
         <article class="work-entry playground-work">
           <div class="work-kicker"><span>02 / PLAYGROUND</span><span class="work-progress" data-i18n="evoStatus">持续改进中</span></div>
@@ -105,6 +105,15 @@
               <div class="work-links"><a class="demo-link" href="https://thinker-zzp.github.io/evo-playground/"><span data-i18n="evoDemo">试一试</span><span aria-hidden="true">↗</span></a><a href="https://github.com/thinker-zzp/evo-playground" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
             </div>
           </div>
+        </article>
+        <article id="experiments" class="work-entry nlp-work">
+          <div class="work-kicker"><span>03 / LANGUAGE LAB</span><span class="work-progress" data-i18n="evoStatus">持续改进中</span></div>
+          <h3 class="work-title" data-i18n="nlpTitle">关于语言的小实验</h3>
+          <p class="work-description" data-i18n="nlpIntro">从下一个字，到词的距离，再到注意力。</p>
+          <div class="lab-grid"><a class="lab-card" href="labs/markov-text/"><span class="lab-tag">N-GRAM / SAMPLING</span><span class="lab-visual lab-markov" aria-hidden="true">在学习与 → 搜索</span><h4>Markov Text<span aria-hidden="true">↗</span></h4><p data-i18n="markovDescription">下一个字怎么选？换个采样方式，看看句子会走向哪里。</p></a>
+<a class="lab-card" href="labs/word-map/"><span class="lab-tag">VECTORS / PCA</span><span class="lab-visual lab-wordmap" aria-hidden="true">king − man + woman</span><h4>Word Map<span aria-hidden="true">↗</span></h4><p data-i18n="wordmapDescription">把词摆进地图，试试词与词的加减法。人工构造的词向量示例。</p></a>
+<a class="lab-card" href="labs/attention-viz/"><span class="lab-tag">ATTENTION / MASK</span><span class="lab-visual lab-attention" aria-hidden="true">Q · K · V</span><h4>Attention Viz<span aria-hidden="true">↗</span></h4><p data-i18n="attentionDescription">一句话里，词会“看”向哪里？用预设权重试试注意力与因果遮罩。</p></a>
+</div>
         </article>
       </div>
     </section>

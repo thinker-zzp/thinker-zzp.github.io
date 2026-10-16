@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive 2D Semantic Word Map: Word Embeddings, PCA Dimensionality Reduction & Vector Arithmetic." />
+  <title>Word Map — Semantic Embeddings Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body><aside class="snapshot-note" role="note">词向量概念演示：使用人工构造的示例向量，非预训练模型。 / Educational vectors are hand-crafted, not pretrained embeddings.</aside>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href=".">
+        <span class="logo-mark">✳</span>
+        <span class="logo-name">word<span class="accent">map</span></span>
+      </a>
+      <p class="tagline">semantic word embeddings & vector arithmetic · visualized</p>
+      <a href="../../?lang=zh#experiments">← 个人主页</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="layout">
+
+      <!-- LEFT PANEL -->
+      <aside class="panel">
+
+        <div class="section">
+          <h2 class="section-title">Vector Arithmetic</h2>
+          <label class="param">
+            Analogy Preset
+            <select class="select" id="analogy-preset"></select>
+          </label>
+          <div class="analogy-inputs">
+            <select class="select" id="input-a"></select>
+            <span class="math-op">&minus;</span>
+            <select class="select" id="input-b"></select>
+            <span class="math-op">&plus;</span>
+            <select class="select" id="input-c"></select>
+          </div>
+          <button class="btn btn--primary" id="btn-compute-analogy">Solve Vector Analogy</button>
+
+          <table class="result-table" style="margin-top:0.6rem">
+            <thead>
+              <tr>
+                <th>Top Prediction</th>
+                <th>Cos Sim</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="analogy-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Projection Method</h2>
+          <select class="select" id="proj-mode">
+            <option value="pca">PCA (Principal Component Analysis)</option>
+            <option value="custom">Custom Semantic Axes</option>
+          </select>
+
+          <div id="custom-axes-group" class="hidden">
+            <label class="param">
+              X-Axis: (Positive &minus; Negative)
+              <div style="display:flex;gap:0.3rem">
+                <select class="select" id="axis-x-pos"></select>
+                <select class="select" id="axis-x-neg"></select>
+              </div>
+            </label>
+            <label class="param">
+              Y-Axis: (Positive &minus; Negative)
+              <div style="display:flex;gap:0.3rem">
+                <select class="select" id="axis-y-pos"></select>
+                <select class="select" id="axis-y-neg"></select>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Categories</h2>
+          <div class="category-list" id="category-toggles">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- CENTER MAP -->
+      <section class="map-container">
+        <div class="map-toolbar">
+          <div style="display:flex;align-items:center;gap:0.5rem">
+            <span>Scroll to Zoom · Drag to Pan · Click Word to Inspect</span>
+          </div>
+          <button class="btn" id="btn-reset-view" style="width:auto;padding:0.18rem 0.6rem;font-size:0.7rem">↺ Reset View</button>
+        </div>
+        <div class="map-canvas-wrap">
+          <canvas id="map-canvas"></canvas>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <aside class="panel">
+
+        <div class="section">
+          <h2 class="section-title">Word Search</h2>
+          <input type="text" class="text-input" id="word-search" placeholder="Search a word (e.g. queen, paris)..." />
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Word Inspector</h2>
+          <div style="margin-bottom:0.4rem">
+            <span id="inspector-word" style="font-weight:700;font-size:1.1rem;color:var(--text)">—</span>
+            <span id="inspector-cat" style="font-size:0.75rem;margin-left:0.4rem"></span>
+          </div>
+
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>Nearest Neighbors</th>
+                <th>Cos Sim</th>
+                <th>Match</th>
+              </tr>
+            </thead>
+            <tbody id="inspector-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">About Word Embeddings</h2>
+          <p class="about">
+            Words are mapped to dense continuous vectors in high-dimensional space.
+            The semantic distance is measured by <strong>Cosine Similarity</strong>:
+          </p>
+          <p class="about" style="font-family:var(--mono);font-size:0.68rem;background:var(--surface-alt);padding:0.25rem 0.4rem;border-radius:3px">
+            cos(&theta;) = (u &middot; v) / (||u|| &middot; ||v||)
+          </p>
+          <p class="about">
+            Analogies like <em>"King &minus; Man &plus; Woman &approx; Queen"</em> illustrate vector arithmetic in this hand-crafted example space.
+          </p>
+          <p class="about">
+            By <a href="https://thinker-zzp.github.io" target="_blank" rel="noopener">Zhipeng Zhang</a> ·
+            <a href="../../?lang=zh#experiments">← 个人主页</a>
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <script src="js/math.js"></script>
+  <script src="js/vectors.js"></script>
+  <script src="js/pca.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

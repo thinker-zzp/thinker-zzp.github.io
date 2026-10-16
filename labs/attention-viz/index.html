@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive Transformer Multi-Head Self-Attention Visualizer: Attention Flow Ribbon & Softmax Matrix Heatmap." />
+  <title>Attention Viz — Self-Attention Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body><aside class="snapshot-note" role="note">注意力概念演示：权重由预设规则生成，非真实 Transformer 模型输出。 / Rule-based illustrative weights, not attention extracted from a trained Transformer.</aside>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href=".">
+        <span class="logo-mark">✳</span>
+        <span class="logo-name">attention<span class="accent">viz</span></span>
+      </a>
+      <p class="tagline">transformer self-attention mechanism · visualized</p>
+      <a href="../../?lang=zh#experiments">← 个人主页</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="layout">
+
+      <!-- LEFT PANEL -->
+      <aside class="panel">
+
+        <div class="section">
+          <h2 class="section-title">Input Sentence</h2>
+          <label class="param">
+            Preset Sentence
+            <select class="select" id="sentence-preset"></select>
+          </label>
+          <input type="text" class="text-input" id="sentence-input" placeholder="Type a sentence here..." />
+          <button class="btn btn--primary" id="btn-compute">Compute Attention</button>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Attention Head</h2>
+          <select class="select" id="head-select">
+            <option value="0">Head 1: Syntactic Dependency</option>
+            <option value="1">Head 2: Coreference Resolution</option>
+            <option value="2">Head 3: Positional Locality</option>
+            <option value="3">Head 4: Semantic Association</option>
+            <option value="-1">Ensemble Head Average</option>
+          </select>
+          <p id="head-desc" style="font-size:0.73rem;color:var(--muted);line-height:1.45;margin-bottom:0.4rem">
+            <strong>Head 1: Syntactic Dependency</strong> — Tracks syntactic relations (e.g. subject to verb).
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Architecture Parameters</h2>
+          <label class="check-label">
+            <input type="checkbox" id="causal-check" />
+            <span>Causal Mask (GPT / Autoregressive)</span>
+          </label>
+          <label class="param">
+            Scale Divisor &radic;d<sub>k</sub> <span class="pval" id="scale-val">2.83</span>
+            <input class="slider" type="range" id="scale-slider" min="0.5" max="8.0" value="2.83" step="0.1" />
+          </label>
+        </div>
+
+      </aside>
+
+      <!-- CENTER-LEFT: Flow Ribbon Diagram -->
+      <section class="viz-card">
+        <div class="viz-header">
+          <span>Bipartite Attention Flow</span>
+          <span>Hover Query / Key</span>
+        </div>
+        <div class="viz-canvas-wrap">
+          <canvas id="flow-canvas"></canvas>
+        </div>
+      </section>
+
+      <!-- CENTER-RIGHT: Attention Matrix Heatmap -->
+      <section class="viz-card">
+        <div class="viz-header">
+          <span>Attention Weight Matrix</span>
+          <span>A<sub>i,j</sub> = softmax(Q K<sup>T</sup> / &radic;d<sub>k</sub>)</span>
+        </div>
+        <div class="viz-canvas-wrap">
+          <canvas id="heatmap-canvas"></canvas>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <aside class="panel">
+
+        <div class="section">
+          <h2 class="section-title">Query Inspector</h2>
+          <div style="margin-bottom:0.4rem">
+            <div id="inspector-token" style="font-weight:700;font-size:1.05rem;color:var(--text)">—</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:0.15rem">
+              Attention Entropy: <span id="inspector-entropy" style="font-family:var(--mono);color:var(--text);font-weight:600">0.00 bits</span>
+            </div>
+          </div>
+
+          <table class="inspector-table">
+            <thead>
+              <tr>
+                <th>Attended Key</th>
+                <th>Weight</th>
+                <th>Distribution</th>
+              </tr>
+            </thead>
+            <tbody id="inspector-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">About Self-Attention</h2>
+          <p class="about">
+            In Transformer models, <strong>Self-Attention</strong> dynamically weights relationships between words in a sequence:
+          </p>
+          <p class="about" style="font-family:var(--mono);font-size:0.67rem;background:var(--surface-alt);padding:0.25rem 0.4rem;border-radius:3px">
+            Attn(Q,K,V) = softmax(QK<sup>T</sup> / &radic;d<sub>k</sub>) V
+          </p>
+          <p class="about">
+            <strong>Multi-Head Attention</strong> lets the model jointly attend to information from different representation subspaces (syntactic, coreference, and locality).
+          </p>
+          <p class="about">
+            By <a href="https://thinker-zzp.github.io" target="_blank" rel="noopener">Zhipeng Zhang</a> ·
+            <a href="../../?lang=zh#experiments">← 个人主页</a>
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <script src="js/attention.js"></script>
+  <script src="js/flow.js"></script>
+  <script src="js/heatmap.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
