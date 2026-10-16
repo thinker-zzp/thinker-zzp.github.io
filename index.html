@@ -12,9 +12,9 @@
   <meta property="og:type" content="website">
   <title>张智鹏 · Zhipeng Zhang</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20261016-photo">
-  <script src="content.js?v=20261016-photo" defer></script>
-  <script src="app.js?v=20261016-photo" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261017-work">
+  <script src="content.js?v=20261017-work" defer></script>
+  <script src="app.js?v=20261017-work" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="skip">跳到正文</a>
@@ -71,23 +71,36 @@
     </section>
 
     <section id="research" class="chapter" aria-labelledby="research-title">
-      <div class="chapter-label"><span class="chapter-number">02 / RESEARCH</span><h2 id="research-title" data-i18n="researchTitle">研究与探索</h2><span class="chapter-aside" data-i18n="researchAside">Learning. Searching. Evolving.</span></div>
-      <div class="chapter-content">
-        <div class="section-intro"><p data-i18n="researchIntro">让学习参与搜索，让配置随求解过程调整。</p><span class="section-index">SELECTED WORK / 01</span></div>
-        <article id="paper-eic" class="research-paper">
-          <div class="paper-meta"><span class="venue-label">EIC 2026</span><span class="accepted-label"><span class="status-dot" aria-hidden="true"></span><span data-i18n="paperStatus">已录用 · 第一作者</span></span></div>
-          <h3 class="paper-title">Static-Prior-Based Dynamic Configuration with Constrained Continuous Residuals for Trainable Evolutionary Algorithms</h3>
-          <p class="paper-authors"><strong>Zhipeng Zhang</strong>, Wenbiao Li, Shangshang Yang</p>
-          <p class="paper-summary" data-i18n="paperSummary">将静态先验与受约束的连续残差结合，使用 SAC 强化学习方法研究进化算法的动态参数配置。</p>
-          <div class="method-strip" role="img" aria-label="方法示意：静态先验结合策略残差，调整进化算法配置，再由搜索反馈连接到策略" data-i18n-aria="methodAria">
-            <div class="method-node"><span class="method-code">01 / PRIOR</span><span data-i18n="methodPrior">静态先验</span></div><span class="method-plus" aria-hidden="true">+</span><div class="method-node"><span class="method-code">02 / POLICY</span><span data-i18n="methodResidual">策略残差</span></div><span class="method-arrow" aria-hidden="true">→</span><div class="method-node method-result"><span class="method-code">03 / SEARCH</span><span data-i18n="methodSearch">动态配置</span></div><div class="method-feedback"><span aria-hidden="true">↳</span><span data-i18n="methodFeedback">搜索反馈 · 持续调整</span><span aria-hidden="true">↲</span></div>
-          </div>
-          <details class="research-details"><summary><span data-i18n="paperContribution">我的工作</span><span class="details-icon" aria-hidden="true">+</span></summary><div class="details-body"><p data-i18n="paperRole">我主导方法与实验方案设计，搭建实验系统，完成对照与消融实验、统计分析，以及论文撰写与修订。</p><p data-i18n="paperExperience">这项研究让我积累了将强化学习引入优化算法、组织可复现实验，以及从实验结果形成论文论证的经验。</p></div></details>
-          <div class="paper-actions"><button type="button" id="citation-open"><span aria-hidden="true">“</span><span data-i18n="citationButton">引用信息</span></button><span data-i18n="paperDate">2026 年 9 月录用</span></div>
+      <div class="chapter-label"><span class="chapter-number">02 / WORK</span><h2 id="research-title" data-i18n="researchTitle">研究与项目</h2></div>
+      <div class="chapter-content work-list">
+        <article class="work-entry research-work">
+          <div class="work-kicker"><span>01 / RESEARCH</span></div>
+          <h3 class="work-title" data-i18n="projectTitle">NeuroEA 参数学习</h3>
+          <p class="work-description" data-i18n="projectSummary">用强化学习为进化算法配置参数。</p>
+          <p class="work-meta" data-i18n="projectDetail">国家级大创 · 2025 年立项 · 项目负责人</p>
+          <details id="paper-eic" class="publication-note">
+            <summary><span class="publication-venue">EIC 2026</span><span class="publication-status" data-i18n="paperStatus">第一作者 · 已录用</span><span class="publication-toggle" data-i18n="paperDetails">论文信息</span><span class="publication-plus" aria-hidden="true">+</span></summary>
+            <div class="publication-body">
+              <h4>Static-Prior-Based Dynamic Configuration with Constrained Continuous Residuals for Trainable Evolutionary Algorithms</h4>
+              <p class="publication-authors"><strong>Zhipeng Zhang</strong>, Wenbiao Li, Shangshang Yang</p>
+              <p data-i18n="paperSummary">结合静态先验与受约束的策略残差，研究进化算法的动态配置。</p>
+              <p data-i18n="paperRole">我负责方法设计、实验系统搭建、实验分析及论文写作。</p>
+              <button class="citation-link" type="button" id="citation-open"><span data-i18n="citationButton">引用信息</span><span aria-hidden="true">↗</span></button>
+            </div>
+          </details>
         </article>
-        <div class="research-other">
-          <article class="project-entry"><span class="small-label" data-i18n="projectLabel">进行中的项目</span><h3 data-i18n="projectTitle">类神经网络演化算法的参数学习研究</h3><p data-i18n="projectDetail">国家级大学生创新创业训练计划项目 · 2025 年立项</p><span class="entry-role" data-i18n="projectRole">项目负责人</span></article>
-        </div>
+        <article class="work-entry playground-work">
+          <div class="work-kicker"><span>02 / PLAYGROUND</span><span class="work-progress" data-i18n="evoStatus">持续改进中</span></div>
+          <div class="playground-layout">
+            <a class="playground-preview" href="https://thinker-zzp.github.io/evo-playground/" aria-label="打开 Evo Playground 演示" data-i18n-aria="evoOpen"><img src="assets/evo-playground.webp" width="960" height="540" loading="lazy" decoding="async" alt="Evo Playground 的算法演示界面" data-i18n-alt="evoImageAlt"><span class="preview-arrow" aria-hidden="true">↗</span></a>
+            <div class="playground-copy">
+              <h3 class="work-title">Evo Playground</h3>
+              <p class="work-description" data-i18n="evoDescription">换个算法，调调参数，看搜索轨迹如何变化。</p>
+              <p class="work-meta">GA / PSO / DE</p>
+              <div class="work-links"><a class="demo-link" href="https://thinker-zzp.github.io/evo-playground/"><span data-i18n="evoDemo">试一试</span><span aria-hidden="true">↗</span></a><a href="https://github.com/thinker-zzp/evo-playground" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
