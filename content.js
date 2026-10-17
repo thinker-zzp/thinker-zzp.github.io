@@ -39,7 +39,7 @@ window.HOMEPAGE_EN = {
   evoOpen: 'Open the Evo Playground demo', evoImageAlt: 'The Evo Playground algorithm visualization interface',
   evoDescription: 'Switch algorithms, adjust parameters, and watch the search paths change.',
   evoDemo: 'Try it',
-  rlStatus: 'Coming soon',
+  rlStatus: 'Work in progress',
   rlOpen: 'Open RL Sandbox', rlDescription: 'Build a maze and watch an agent learn to find its way out.',
   journeyTitle: 'Along the way', journeyAside: 'A few steps so far.',
   university: 'Anhui University', degree: 'Computer Science · Undergraduate', educationDate: '2024 — Present',
