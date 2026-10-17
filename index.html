@@ -12,9 +12,9 @@
   <meta property="og:type" content="website">
   <title>张智鹏 · Zhipeng Zhang</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20261017-nlp">
-  <script src="content.js?v=20261017-nlp" defer></script>
-  <script src="app.js?v=20261017-nlp" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261017-contact">
+  <script src="content.js?v=20261017-contact" defer></script>
+  <script src="app.js?v=20261017-contact" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="skip">跳到正文</a>
@@ -36,7 +36,7 @@
         <p class="name-latin" data-i18n="heroSecondary">Zhipeng Zhang</p>
         <p class="hero-statement" data-i18n="heroStatement">在学习与搜索之间，<br>探索更好的算法。</p>
         <p class="hero-description" data-i18n="heroDescription">计算机科学与技术<br>目前关注强化学习、进化计算与算法动态配置。</p>
-        <div class="hero-links"><a class="text-link" href="#research"><span data-i18n="exploreResearch">看看我的研究</span><span aria-hidden="true">↓</span></a><a class="quiet-link" href="mailto:zhangzhipeng520ai@gmail.com?subject=CV%20request" target="_blank" rel="noopener"><span data-i18n="viewCV">索取简历</span><span aria-hidden="true">↗</span></a></div>
+        <div class="hero-links"><a class="text-link" href="#research"><span data-i18n="exploreResearch">看看我的研究</span><span aria-hidden="true">↓</span></a><a class="quiet-link" href="#contact"><span data-i18n="viewCV">联系索取简历</span><span aria-hidden="true">↗</span></a></div>
       </div>
       <figure class="search-study">
         <div class="study-top"><span>STUDY NO. 01</span><span data-i18n="studyTheme">LEARNING TO SEARCH</span></div>
@@ -64,9 +64,9 @@
       <div class="chapter-content about-content">
         <p class="lead" data-i18n="aboutLead">我在安徽大学学习计算机科学与技术，是 2024 级本科生。</p>
         <p data-i18n="aboutBody">我的研究围绕一个问题展开：如何让算法在求解过程中，学会调整自己的搜索方式？目前，我将强化学习用于进化算法的动态配置，探索静态先验、残差控制与策略学习的结合。</p>
-        <p data-i18n="aboutWork">在研究中，我参与方法设计、实验系统搭建、对照与消融实验，以及结果分析和论文写作。我也对自然语言处理感兴趣，正在做一些可以动手玩的小实验。</p>
+        <p data-i18n="aboutWork">在研究中，我参与方法设计、实验系统搭建、对照与消融实验，以及结果分析和论文写作。我也对自然语言处理感兴趣，也会继续学习相关知识。</p>
         <div class="interest-row"><span class="small-label" data-i18n="interestsLabel">研究兴趣</span><div class="interest-list"><span data-i18n="interestRL">强化学习</span><span data-i18n="interestEC">进化计算</span><span data-i18n="interestAC">算法动态配置</span><span data-i18n="interestNLP">自然语言处理</span></div></div>
-        <div class="about-links"><a href="mailto:zhangzhipeng520ai@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://github.com/thinker-zzp" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="mailto:zhangzhipeng520ai@gmail.com?subject=CV%20request" target="_blank" rel="noopener"><span data-i18n="cvLabel">索取简历</span> <span aria-hidden="true">↗</span></a></div>
+        <div class="about-links"><a href="mailto:zhangzhipeng520ai@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://github.com/thinker-zzp" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="#contact"><span data-i18n="cvLabel">联系索取简历</span> <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
@@ -106,16 +106,7 @@
             </div>
           </div>
         </article>
-        <article id="experiments" class="work-entry nlp-work">
-          <div class="work-kicker"><span>03 / LANGUAGE LAB</span><span class="work-progress" data-i18n="evoStatus">持续改进中</span></div>
-          <h3 class="work-title" data-i18n="nlpTitle">关于语言的小实验</h3>
-          <p class="work-description" data-i18n="nlpIntro">从下一个字，到词的距离，再到注意力。</p>
-          <div class="lab-grid"><a class="lab-card" href="labs/markov-text/"><span class="lab-tag">N-GRAM / SAMPLING</span><span class="lab-visual lab-markov" aria-hidden="true">在学习与 → 搜索</span><h4>Markov Text<span aria-hidden="true">↗</span></h4><p data-i18n="markovDescription">下一个字怎么选？换个采样方式，看看句子会走向哪里。</p></a>
-<a class="lab-card" href="labs/word-map/"><span class="lab-tag">VECTORS / PCA</span><span class="lab-visual lab-wordmap" aria-hidden="true">king − man + woman</span><h4>Word Map<span aria-hidden="true">↗</span></h4><p data-i18n="wordmapDescription">把词摆进地图，试试词与词的加减法。人工构造的词向量示例。</p></a>
-<a class="lab-card" href="labs/attention-viz/"><span class="lab-tag">ATTENTION / MASK</span><span class="lab-visual lab-attention" aria-hidden="true">Q · K · V</span><h4>Attention Viz<span aria-hidden="true">↗</span></h4><p data-i18n="attentionDescription">一句话里，词会“看”向哪里？用预设权重试试注意力与因果遮罩。</p></a>
 </div>
-        </article>
-      </div>
     </section>
 
     <section id="journey" class="chapter" aria-labelledby="journey-title">
@@ -145,7 +136,7 @@
       </div>
     </section>
 
-    <section id="contact" class="contact-section" aria-labelledby="contact-title"><div><p class="eyebrow" data-i18n="contactEyebrow">KEEP IN TOUCH</p><h2 id="contact-title" data-i18n="contactTitle">从一封邮件开始。</h2><p data-i18n="contactIntro">欢迎聊聊研究、项目，或一个有趣的问题。</p></div><div class="contact-right"><a class="email-link" href="mailto:zhangzhipeng520ai@gmail.com">zhangzhipeng520ai@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-options"><button type="button" id="copy-email" data-i18n="copyEmail">复制邮箱</button><span aria-hidden="true">/</span><a href="https://github.com/thinker-zzp" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></section>
+    <section id="contact" class="contact-section" aria-labelledby="contact-title"><div><p class="eyebrow" data-i18n="contactEyebrow">KEEP IN TOUCH</p><h2 id="contact-title" data-i18n="contactTitle">从一封邮件开始。</h2><p data-i18n="contactIntro">欢迎交流研究与项目。如需完整简历，请通过下方邮箱联系。</p></div><div class="contact-right"><a class="email-link" href="mailto:zhangzhipeng520ai@gmail.com">zhangzhipeng520ai@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-options"><button type="button" id="copy-email" data-i18n="copyEmail">复制邮箱</button><span aria-hidden="true">/</span><a href="https://github.com/thinker-zzp" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></section>
   </main>
   <footer class="site-footer page-shell"><span>© <span data-current-year>2026</span> <span data-i18n="footerName">张智鹏</span><span class="footer-dot">·</span><span data-i18n="footerNote">持续生长中。</span></span><a href="#top"><span data-i18n="backTop">回到开头</span> ↑</a></footer>
   <dialog id="citation-dialog" aria-labelledby="citation-title"><div class="dialog-heading"><h2 id="citation-title" data-i18n="citationTitle">引用信息</h2><button id="citation-close" type="button" aria-label="关闭" data-i18n-aria="closeDialog">×</button></div><p class="citation-note" data-i18n="citationNote">论文已录用。正式出版信息公布后，将更新卷页与 DOI。</p><pre id="citation-text" tabindex="0">Zhang, Z., Li, W., &amp; Yang, S. (2026). Static-Prior-Based Dynamic Configuration with Constrained Continuous Residuals for Trainable Evolutionary Algorithms. EIC 2026. Accepted.</pre><button class="solid-button" type="button" id="copy-citation" data-i18n="copyCitation">复制引用</button></dialog>
