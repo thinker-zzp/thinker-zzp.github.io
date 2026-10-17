@@ -76,3 +76,5 @@ html[lang="en"] h1{font-size:77px;letter-spacing:-3px;line-height:1.1;margin-top
 #contact{scroll-margin-top:120px}
 
 .rl-game-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:26px;align-items:center}.rl-preview{display:block;background:#eef0e7;border:1px solid var(--line)}.rl-preview svg{width:100%;height:auto;max-height:180px}.rl-work .work-title{font-size:24px}.rl-work .work-description{font-size:12px}#rl-game{scroll-margin-top:120px}@media(max-width:600px){.rl-game-layout{grid-template-columns:1fr;gap:18px}.rl-preview{max-width:400px}.rl-work .work-title{font-size:25px}}
+
+.open-source-intro{font-family:var(--serif);font-size:17px;line-height:1.9;color:#626c5a;margin:0 0 30px}#open-source{scroll-margin-top:120px}@media(max-width:600px){.open-source-intro{font-size:16px;margin-bottom:26px}.top-nav{gap:10px}}

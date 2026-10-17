@@ -12,9 +12,9 @@
   <meta property="og:type" content="website">
   <title>张智鹏 · Zhipeng Zhang</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20261017-rl-live">
-  <script src="content.js?v=20261017-rl-live" defer></script>
-  <script src="app.js?v=20261017-rl-live" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261017-open-source">
+  <script src="content.js?v=20261017-open-source" defer></script>
+  <script src="app.js?v=20261017-open-source" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="skip">跳到正文</a>
@@ -22,7 +22,7 @@
     <div class="header-inner">
       <a class="wordmark" href="#top" aria-label="张智鹏 Zhipeng Zhang"><span class="seal" aria-hidden="true">张</span><span>ZHIPENG ZHANG<span class="wordmark-sub" data-i18n="wordmarkSub">个人主页 · PERSONAL HOMEPAGE</span></span></a>
       <nav class="top-nav" aria-label="主导航" data-i18n-aria="navLabel">
-        <a href="#about" data-i18n="navAbout">关于</a><a href="#research" data-i18n="navResearch">研究</a><a href="#journey" data-i18n="navJourney">经历</a><a href="#life" data-i18n="navLife">生活</a>
+        <a href="#about" data-i18n="navAbout">关于</a><a href="#research" data-i18n="navResearch">研究</a><a href="#open-source" data-i18n="navOpenSource">开源</a><a href="#journey" data-i18n="navJourney">经历</a><a href="#life" data-i18n="navLife">生活</a>
       </nav>
       <div class="header-actions"><button class="language-switch" id="language-toggle" type="button" aria-label="Switch to English"><span id="lang-zh" class="selected">中</span><span class="lang-divider">/</span><span id="lang-en">EN</span></button><a class="header-contact" href="mailto:zhangzhipeng520ai@gmail.com"><span data-i18n="getInTouch">联系我</span><span aria-hidden="true">↗</span></a></div>
     </div>
@@ -71,7 +71,7 @@
     </section>
 
     <section id="research" class="chapter" aria-labelledby="research-title">
-      <div class="chapter-label"><span class="chapter-number">02 / WORK</span><h2 id="research-title" data-i18n="researchTitle">研究与项目</h2></div>
+      <div class="chapter-label"><span class="chapter-number">02 / RESEARCH</span><h2 id="research-title" data-i18n="researchTitle">科研</h2></div>
       <div class="chapter-content work-list">
         <article class="work-entry research-work">
           <div class="work-kicker"><span>01 / RESEARCH</span></div>
@@ -94,8 +94,15 @@
             </div>
           </article>
         </article>
+      </div>
+    </section>
+
+    <section id="open-source" class="chapter" aria-labelledby="open-source-title">
+      <div class="chapter-label"><span class="chapter-number">03 / OPEN SOURCE</span><h2 id="open-source-title" data-i18n="openSourceTitle">开源小项目</h2></div>
+      <div class="chapter-content">
+        <p class="open-source-intro" data-i18n="openSourceIntro">我把感兴趣的算法，做成可以动手玩的小工具。</p>
         <article class="work-entry playground-work">
-          <div class="work-kicker"><span>02 / PLAYGROUND</span><span class="work-progress" data-i18n="evoStatus">持续改进中</span></div>
+          <div class="work-kicker"><span>01 / EVOLUTION</span><span class="work-progress" data-i18n="evoStatus">持续改进中</span></div>
           <div class="playground-layout">
             <a class="playground-preview" href="https://thinker-zzp.github.io/evo-playground/" aria-label="打开 Evo Playground 演示" data-i18n-aria="evoOpen"><img src="assets/evo-playground.webp" width="960" height="540" loading="lazy" decoding="async" alt="Evo Playground 的算法演示界面" data-i18n-alt="evoImageAlt"><span class="preview-arrow" aria-hidden="true">↗</span></a>
             <div class="playground-copy">
@@ -107,17 +114,17 @@
           </div>
         </article>
         <article id="rl-game" class="work-entry rl-work">
-          <div class="work-kicker"><span>03 / REINFORCEMENT LEARNING</span><span class="work-progress" data-i18n="rlStatus">持续改进中</span></div>
+          <div class="work-kicker"><span>02 / REINFORCEMENT LEARNING</span><span class="work-progress" data-i18n="rlStatus">持续改进中</span></div>
           <div class="rl-game-layout">
             <a class="rl-preview" href="https://thinker-zzp.github.io/rl-sandbox/" aria-label="打开 RL Sandbox" data-i18n-aria="rlOpen"><svg viewBox="0 0 240 168" aria-hidden="true"><defs><pattern id="rl-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#d0d6c6" stroke-width="1"/></pattern></defs><rect x="22" y="14" width="196" height="140" fill="url(#rl-grid)"/><g fill="#9ba78d"><rect x="78" y="42" width="28" height="28"/><rect x="78" y="70" width="28" height="28"/><rect x="134" y="98" width="56" height="28"/></g><path d="M36 140V28H120V84H204V28" fill="none" stroke="#973e32" stroke-width="1.7" stroke-dasharray="3 4"/><circle cx="36" cy="140" r="5" fill="#973e32"/><path d="m204 21 2 5 6 1-4 4 1 6-5-3-5 3 1-6-4-4 6-1z" fill="#788763"/></svg></a>
             <div><h3 class="work-title">RL Sandbox</h3><p class="work-description" data-i18n="rlDescription">摆一座迷宫，看智能体学着找到出口。</p><div class="work-links"><a class="demo-link" href="https://thinker-zzp.github.io/rl-sandbox/"><span data-i18n="evoDemo">试一试</span><span aria-hidden="true">↗</span></a><a href="https://github.com/thinker-zzp/rl-sandbox" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
           </div>
         </article>
-</div>
+      </div>
     </section>
 
     <section id="journey" class="chapter" aria-labelledby="journey-title">
-      <div class="chapter-label"><span class="chapter-number">03 / JOURNEY</span><h2 id="journey-title" data-i18n="journeyTitle">一路积累</h2><span class="chapter-aside" data-i18n="journeyAside">一些走过的路。</span></div>
+      <div class="chapter-label"><span class="chapter-number">04 / JOURNEY</span><h2 id="journey-title" data-i18n="journeyTitle">一路积累</h2><span class="chapter-aside" data-i18n="journeyAside">一些走过的路。</span></div>
       <div class="chapter-content">
         <div class="education-heading"><span class="university-emblem" aria-hidden="true">A<span>HU</span></span><div><h3 data-i18n="university">安徽大学</h3><p data-i18n="degree">计算机科学与技术 · 本科</p></div><span class="education-date" data-i18n="educationDate">2024 — 至今</span></div>
         <p class="discipline-rating" data-i18n="disciplineRating">计算机科学与技术 · 学科评估 B+</p>
@@ -134,7 +141,7 @@
     </section>
 
     <section id="life" class="chapter personal-chapter" aria-labelledby="life-title">
-      <div class="chapter-label"><span class="chapter-number">04 / LIFE</span><h2 id="life-title" data-i18n="lifeTitle">研究之外</h2></div>
+      <div class="chapter-label"><span class="chapter-number">05 / LIFE</span><h2 id="life-title" data-i18n="lifeTitle">研究之外</h2></div>
       <div class="chapter-content">
         <figure class="life-photo">
           <div class="life-photo-frame"><img src="assets/sydney.webp" width="960" height="1280" loading="lazy" decoding="async" alt="张智鹏在悉尼海港大桥前" data-i18n-alt="lifePhotoAlt"></div>
