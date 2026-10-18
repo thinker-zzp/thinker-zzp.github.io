@@ -36,7 +36,7 @@ window.HOMEPAGE_EN = {
   paperStatus: 'First author · Accepted', paperDetails: 'Paper details',
   paperSummary: 'Combining static priors with constrained policy residuals to study dynamic configuration of evolutionary algorithms.',
   paperRole: 'I led method design, built the experimental system, analyzed the results, and wrote the manuscript.',
-  citationButton: 'Citation',
+  citationButton: 'Citation', paperCode: 'Code',
   evoStatus: 'Work in progress',
   evoOpen: 'Open the Evo Playground demo', evoImageAlt: 'The Evo Playground algorithm visualization interface',
   evoDescription: 'Switch algorithms, adjust parameters, and watch the search paths change.',

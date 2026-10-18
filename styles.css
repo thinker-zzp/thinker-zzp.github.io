@@ -44,7 +44,7 @@ html[lang="en"] h1{font-size:77px;letter-spacing:-3px;line-height:1.1;margin-top
 .publication-status{color:var(--muted)}.publication-toggle{margin-left:auto;color:var(--muted)}.publication-plus{font:20px/1 var(--serif);color:var(--accent);transition:transform .2s}
 .publication-note[open] .publication-plus{transform:rotate(45deg)}.publication-body{padding:18px 0 0}.publication-body h4{font:400 17px/1.65 var(--serif);overflow-wrap:anywhere}
 .publication-body p{font-size:12px;line-height:1.9;color:var(--muted);margin-top:12px}.publication-body .publication-authors{font-size:10px}.publication-authors strong{font-weight:500;color:var(--ink)}
-.citation-link{display:flex;gap:9px;align-items:center;font-size:10px;color:var(--accent);margin-top:16px;padding:0}
+.publication-links{display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin-top:16px;font-size:11px;color:var(--accent)}.publication-links a,.citation-link{display:flex;gap:9px;align-items:center;font-size:inherit;color:var(--accent);padding:0}
 .work-progress{font:10px var(--sans);letter-spacing:0;color:#68745b;white-space:nowrap;display:flex;align-items:center;gap:7px}.work-progress::before{content:"";width:4px;height:4px;border-radius:50%;background:#859371}
 .playground-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:26px;align-items:center}
 .playground-preview{position:relative;display:block;overflow:hidden;border:1px solid #dcddd3;background:#ecece5;transition:border-color .2s}
