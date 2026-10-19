@@ -4,7 +4,7 @@
 window.HOMEPAGE_EN = {
   profileRole: 'Computer Science, Anhui University\nUndergraduate · Enrolled 2024 · Turing Class',
   cvNote: 'Full CV available by email.', cvDownload: 'Download CV (PDF)',
-  compactBio: 'I am Zhipeng Zhang, an undergraduate in Computer Science at Anhui University, enrolled in the Turing Class in 2024. I rank 15th out of 231 students (top 6.5%) over my first four semesters. My current research uses reinforcement learning to configure the parameters of evolutionary algorithms. I am also interested in NLP, LLMs, and LLM agents.',
+  compactBio: 'I am Zhipeng Zhang, an undergraduate in Computer Science at Anhui University, enrolled in the Turing Class in 2024. I rank 15th out of 231 students (top 6.5%) over my first four semesters. My current research uses reinforcement learning to configure the parameters of evolutionary algorithms. I am also interested in NLP, with a particular interest in LLM agents.',
   compactEducation: 'Computer Science and Technology · Discipline evaluation: B+',
   projectDate: '2025 — Present',
   compactResearch: 'I design and implement algorithms, conduct comparative and ablation studies, sensitivity analyses, and statistical tests, and write the manuscript.',
