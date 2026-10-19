@@ -105,19 +105,14 @@
       'data-lang': giscusLanguage() === 'en' ? '' : 'zh-CN'
     };
     Object.entries(attributes).forEach(([name, value]) => script.setAttribute(name, value));
-    let settled = false;
     let giscusTimer;
     let giscusObserver;
     const markLoaded = () => {
-      if (settled) return;
-      settled = true;
       clearTimeout(giscusTimer);
       giscusObserver?.disconnect();
       if (giscusStatus) giscusStatus.hidden = true;
     };
     const fail = () => {
-      if (settled) return;
-      settled = true;
       clearTimeout(giscusTimer);
       giscusObserver?.disconnect();
       giscusMounted = false;
@@ -127,9 +122,9 @@
     };
     giscusTimer = setTimeout(() => {
       const frame = giscusContainer.querySelector('iframe');
-      if (frame && !frame.classList.contains('giscus-frame--loading')) markLoaded();
-      else fail();
-    }, 15000);
+      if (!frame) fail();
+      else if (giscusStatus) giscusStatus.hidden = false;
+    }, 20000);
     giscusObserver = new MutationObserver(() => {
       const frame = giscusContainer.querySelector('iframe');
       if (!frame) return;
