@@ -3,7 +3,7 @@
    Keep each data-i18n key unique within a page. No external requests are made. */
 window.HOMEPAGE_EN = {
   profileRole: 'Computer Science, Anhui University\nUndergraduate · Enrolled 2024 · Turing Class',
-  cvNote: 'Full CV available by email.',
+  cvNote: 'Full CV available by email.', cvDownload: 'Download CV (PDF)',
   compactBio: 'I am Zhipeng Zhang, an undergraduate in Computer Science at Anhui University, enrolled in the Turing Class in 2024. I rank 15th out of 231 students (top 6.5%) over my first four semesters. My current research focuses on reinforcement learning for parameter configuration of evolutionary algorithms. I am also interested in natural language processing.',
   compactEducation: 'Computer Science and Technology · Discipline evaluation: B+ · C/C++, Python',
   projectDate: '2025 — Present',
