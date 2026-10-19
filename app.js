@@ -47,6 +47,8 @@
     if (ogDescription && metaDescription) ogDescription.content = metaDescription.content;
     document.getElementById('lang-zh')?.classList.toggle('selected', language === 'zh');
     document.getElementById('lang-en')?.classList.toggle('selected', language === 'en');
+    document.getElementById('lang-zh')?.setAttribute('aria-pressed', String(language === 'zh'));
+    document.getElementById('lang-en')?.setAttribute('aria-pressed', String(language === 'en'));
     const toggle = document.getElementById('language-toggle');
     if (toggle) toggle.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换为中文');
     document.querySelectorAll('a[href*="cv.html"], a[data-home-link]').forEach(link => {
@@ -60,6 +62,8 @@
     try { history.replaceState(null, '', url); } catch { /* file:// previews can restrict history. */ }
     if (notify) announce(language === 'en' ? english.toastEnglish : english.toastChinese);
   }
+  document.getElementById('lang-zh')?.addEventListener('click', () => setLanguage('zh', true));
+  document.getElementById('lang-en')?.addEventListener('click', () => setLanguage('en', true));
   document.getElementById('language-toggle')?.addEventListener('click', () => setLanguage(language === 'en' ? 'zh' : 'en', true));
   setLanguage(requestedLanguage === 'en' || requestedLanguage === 'zh' ? requestedLanguage : storedLanguage || 'en');
 
