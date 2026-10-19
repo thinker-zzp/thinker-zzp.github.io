@@ -61,11 +61,113 @@
     url.searchParams.set('lang', language);
     try { history.replaceState(null, '', url); } catch { /* file:// previews can restrict history. */ }
     if (notify) announce(language === 'en' ? english.toastEnglish : english.toastChinese);
+    refreshGiscusLanguage();
+  }
+  // GitHub Discussions comments via giscus. The widget is loaded only when the
+  // reader approaches the section, so visitors who never reach it send no
+  // request to giscus.app. The CSP in index.html allows only giscus.app.
+  const giscusContainer = document.getElementById('giscus-comments');
+  const giscusStatus = document.getElementById('comments-status');
+  const giscusConfig = {
+    repo: 'thinker-zzp/thinker-zzp.github.io',
+    repoId: 'R_kgDOVMbtQA',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOVMbtQM4DI-b2',
+    mapping: 'pathname',
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'top',
+    theme: 'light',
+    loading: 'lazy'
+  };
+  let giscusMounted = false;
+  const giscusLanguage = () => language === 'en' ? 'en' : 'zh-CN';
+  function mountGiscus() {
+    if (!giscusContainer || giscusMounted || !/^https?:$/.test(location.protocol)) return;
+    giscusMounted = true;
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    const attributes = {
+      'data-repo': giscusConfig.repo,
+      'data-repo-id': giscusConfig.repoId,
+      'data-category': giscusConfig.category,
+      'data-category-id': giscusConfig.categoryId,
+      'data-mapping': giscusConfig.mapping,
+      'data-strict': giscusConfig.strict,
+      'data-reactions-enabled': giscusConfig.reactionsEnabled,
+      'data-emit-metadata': giscusConfig.emitMetadata,
+      'data-input-position': giscusConfig.inputPosition,
+      'data-theme': giscusConfig.theme,
+      'data-loading': giscusConfig.loading,
+      'data-lang': giscusLanguage() === 'en' ? '' : 'zh-CN'
+    };
+    Object.entries(attributes).forEach(([name, value]) => script.setAttribute(name, value));
+    let settled = false;
+    let giscusTimer;
+    let giscusObserver;
+    const markLoaded = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(giscusTimer);
+      giscusObserver?.disconnect();
+      if (giscusStatus) giscusStatus.hidden = true;
+    };
+    const fail = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(giscusTimer);
+      giscusObserver?.disconnect();
+      giscusMounted = false;
+      giscusContainer.replaceChildren();
+      giscusContainer.classList.add('giscus-unavailable');
+      if (giscusStatus) giscusStatus.hidden = false;
+    };
+    giscusTimer = setTimeout(() => {
+      const frame = giscusContainer.querySelector('iframe');
+      if (frame && !frame.classList.contains('giscus-frame--loading')) markLoaded();
+      else fail();
+    }, 15000);
+    giscusObserver = new MutationObserver(() => {
+      const frame = giscusContainer.querySelector('iframe');
+      if (!frame) return;
+      frame.title = giscusLanguage() === 'en' ? 'Comments' : '留言与讨论';
+      frame.addEventListener('load', markLoaded, { once: true });
+      if (!frame.classList.contains('giscus-frame--loading')) markLoaded();
+    });
+    giscusObserver.observe(giscusContainer, { childList: true, subtree: true });
+    script.addEventListener('error', fail, { once: true });
+    giscusContainer.replaceChildren(script);
+  }
+  function refreshGiscusLanguage() {
+    if (!giscusMounted || !giscusContainer) return;
+    const frame = giscusContainer.querySelector('iframe.giscus-frame');
+    if (!frame) return;
+    try {
+      const url = new URL(frame.src);
+      const lang = giscusLanguage();
+      url.pathname = lang === 'en' ? '/widget' : `/${lang}/widget`;
+      url.searchParams.delete('lang');
+      frame.src = url.toString();
+      frame.title = lang === 'en' ? 'Comments' : '留言与讨论';
+    } catch { /* Keep the current widget if its URL cannot be parsed. */ }
+  }
+  const commentsSection = document.getElementById('comments');
+  if (commentsSection && 'IntersectionObserver' in window) {
+    const commentsObserver = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      commentsObserver.disconnect();
+      mountGiscus();
+    }, { rootMargin: '600px 0px' });
+    commentsObserver.observe(commentsSection);
   }
   document.getElementById('lang-zh')?.addEventListener('click', () => setLanguage('zh', true));
   document.getElementById('lang-en')?.addEventListener('click', () => setLanguage('en', true));
   document.getElementById('language-toggle')?.addEventListener('click', () => setLanguage(language === 'en' ? 'zh' : 'en', true));
   setLanguage(requestedLanguage === 'en' || requestedLanguage === 'zh' ? requestedLanguage : storedLanguage || 'en');
+  if (commentsSection && !('IntersectionObserver' in window)) mountGiscus();
 
   async function copyText(value, success) {
     try {
