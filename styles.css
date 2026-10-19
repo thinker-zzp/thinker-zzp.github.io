@@ -18,3 +18,5 @@ h2{font-size:21px}h3{font-size:16px}
 .compact-awards{font-size:14px}.compact-awards li{margin-top:7px}
 .compact-awards time{font-size:12px}.top-nav{font-size:13px}
 }
+
+.paper-summary{font-size:13px;line-height:1.75;color:var(--muted);margin-top:7px}@media(min-width:1600px){.paper-summary{font-size:14px}}
