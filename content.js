@@ -38,7 +38,7 @@ window.HOMEPAGE_EN = {
   interestNLP: 'Natural language processing',
   researchTitle: 'Research',
   openSourceTitle: 'Toy',
-  openSourceIntro: 'Small open-source projects I build out of curiosity. Try them in your browser.',
+  openSourceIntro: 'Small open-source projects I build out of curiosity and to learn. Try them in your browser.',
   projectTitle: 'Parameter learning for NeuroEA',
   projectSummary: 'Using reinforcement learning to configure evolutionary algorithms.',
   projectDetail: 'National Undergraduate Innovation and Entrepreneurship Training Program · Project lead',
