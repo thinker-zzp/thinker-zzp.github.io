@@ -1,6 +1,19 @@
 'use strict';
 (() => {
   const english = window.HOMEPAGE_EN || {};
+  const themeSelect = document.getElementById('theme-select');
+  function setTheme(value) {
+    const theme = value === 'warm' ? 'warm' : 'blue';
+    document.documentElement.dataset.theme = theme;
+    if (themeSelect) themeSelect.value = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'warm' ? '#faf7f0' : '#f2f7fd');
+    try { localStorage.setItem('zzp-home-theme', theme); } catch { /* Selection works without storage. */ }
+  }
+  let savedTheme;
+  try { savedTheme = localStorage.getItem('zzp-home-theme'); } catch { /* Use the default light blue. */ }
+  setTheme(savedTheme);
+  themeSelect?.addEventListener('change', () => setTheme(themeSelect.value));
+
   const chineseText = new Map();
   const chineseAria = new Map();
   const textElements = [...document.querySelectorAll('[data-i18n]')];

@@ -2,6 +2,7 @@
    so the homepage remains readable even with JavaScript disabled.
    Keep each data-i18n key unique within a page. No external requests are made. */
 window.HOMEPAGE_EN = {
+  themeLabel: 'Color theme', themeBlue: 'Light blue', themeWarm: 'Warm white',
   profileRole: 'Computer Science, Anhui University\nUndergraduate · Enrolled 2024 · Turing Class',
   cvNote: 'Full CV available by email.', cvDownload: 'Download CV (PDF)',
   compactBio: 'I am Zhipeng Zhang, an undergraduate in Computer Science at Anhui University, enrolled in the Turing Class in 2024. I rank 15th out of 231 students (top 6.5%) over my first four semesters. My current research uses reinforcement learning to configure the parameters of evolutionary algorithms. I am also interested in NLP, with a particular interest in LLM agents.',
